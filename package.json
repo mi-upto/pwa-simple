@@ -7,9 +7,10 @@
     "lint:styles": "stylelint src",
     "lint:scripts": "eslint src",
     "dev": "webpack serve --config webpack/webpack.config.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
+    "build": "npm run build:app && npm run build:sw",
+    "build:app": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
     "build:sw": "workbox generateSW workbox-config.js",
-    "start": "npm run build && npm run build:sw && node scripts/local-server/index.js"
+    "start": "npm run build && node scripts/local-server/index.js"
   },
   "repository": {
     "type": "git",
