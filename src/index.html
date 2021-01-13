@@ -14,16 +14,5 @@
 <body>
   <h1>webpack starter</h1>
   <p>✨ A lightweight foundation for your next webpack based frontend project.</p>
-
-<script>
-  // Check that service workers are supported
-  if ('serviceWorker' in navigator) {
-    // Use the window load event to keep the page load performant
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/public/js/sw.js')
-        .catch(() => {});
-    });
-  }
-</script>
 </body>
 </html>
