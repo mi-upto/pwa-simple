@@ -5,5 +5,7 @@ if (process.env.NODE_ENV === 'development') {
   require('../index.html');
 }
 
-const wb = new Workbox('/sw.js');
-wb.register();
+if (process.env.NODE_ENV === 'production') {
+  const wb = new Workbox('/sw.js');
+  wb.register();
+}
